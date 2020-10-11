@@ -34,13 +34,13 @@ app.get("/weather", (req, res) => {
         console.log(error, longitude);
         return res.send(error);
       }
-      getInform.getWeather(longitude, latitude, (error, weatherData) => {
+      getInform.getWeather(longitude, latitude, (error, description, time, temp, precip, humidity) => {
         if (error) {
           return res.send(error);
         }
         res.send({
-          forcast: weatherData,
           location,
+          description, time, temp, precip, humidity
         });
       });
     }

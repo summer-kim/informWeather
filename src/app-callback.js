@@ -37,7 +37,7 @@ const getWeather = (longi, lati, callback) => {
       callback("Unable to find the weather. Try again", undefined);
     } else {
       const parsed = JSON.parse(body);
-      callback(undefined, parsed.current.weather_descriptions[0]);
+      callback(undefined, parsed.current.weather_descriptions[0], parsed.location.localtime,parsed.current.temperature,parsed.current.precip, parsed.current.humidity);
     }
   });
 };
