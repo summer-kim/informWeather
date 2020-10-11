@@ -12,7 +12,7 @@ form.addEventListener("submit", (e) => {
   } else {
     message1.textContent = "Loading...";
 
-    fetch("http://localhost:3000/weather?address=" + locationInput.value).then((response) => {
+    fetch("/weather?address=" + locationInput.value).then((response) => {
       response.json().then((data) => {
         if (data.error) {
           message1.textContent = data.error;
